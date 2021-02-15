@@ -15,10 +15,10 @@
 				</h2>
 				<div class="form-group">
 				<div class="form-row form-row-1">
-					<input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required>
+					<input type="text" name="first_name" id="first_name" class="input-text" minlength="3" maxlength="26"placeholder="First Name" required>
 				</div>
 				<div class="form-row form-row-2">
-					<input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required>
+					<input type="text" name="last_name" id="last_name" class="input-text" minlength="2" maxlength="40"placeholder="Last Name" required>
 				</div>
 			</div>
 				<div class="form-row">
@@ -61,32 +61,33 @@
 						</span>
 					</div>
 					<div class="form-row">
-					<input type="password" name="psw" id="password" placeholder="Enter Password" required>
+					<input type="password" name="psw" id="password" minlength="8" maxlength="25"placeholder="Enter Password" required>
 				</div>
 				<div class="form-row">
-					<input type="password" name="psw-repeat" id="password" placeholder="Retype Password" required>
+					<input type="password" name="psw-repeat" id="password" minlength="8" maxlength="25"placeholder="Retype Password" required>
 				</div>
 			</div>
 			<div class="form-right">
 					<h2>Contact Details</h2>
 					<div class="form-row">
-						<input type="text" name="street" class="street" id="street" placeholder="Street + Nr" required>
+						<input type="text" name="street" class="street" id="street" minlength="5" maxlength="80"placeholder="Street + Nr" required>
 					</div>
 					<div class="form-row">
-						<input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information" required>
+						<input type="text" name="additional" class="additional" id="additional" minlength="5" maxlength="80"placeholder="Additional Information" required>
 					</div>
 					<div class="form-row">
 						
-							<input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
+							<input type="number" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
 						
 					</div>
 					<div class="form-row">
-						<select name="country">
-						    <option value="country">Country</option>
-						    <option value="Vietnam">Japan</option>
-						    <option value="Malaysia">Russia</option>
-						    <option value="India">India</option>
-						</select>
+						<select id="countries"></select>
+						<span class="select-btn">
+						  	
+						</span>
+					</div>
+					<div class="form-row">
+						<select id="states"></select>
 						<span class="select-btn">
 						  	
 						</span>
@@ -96,11 +97,11 @@
 							<input type="text" name="code" class="code" id="code" placeholder="Code +" required>
 						</div>
 						<div class="form-row form-row-2">
-							<input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
+							<input type="number" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
 						</div>
 					</div>
 					<div class="form-row">
-						<input type="email" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+						<input type="email" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" minlength="6" maxlength="25"placeholder="Your Email">
 					</div>
 					<div class="form-row-last">
 						<input type="submit" name="register" class="register" value="Register">
@@ -110,4 +111,5 @@
 		</div>
 	</div>
 </body>
+<script  src="main.js"></script>
 </html>
