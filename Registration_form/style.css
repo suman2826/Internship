@@ -21,64 +21,64 @@ body {
 	position: relative;
 	font-family: sans-serif;
 }
-.form-content .form-detail {
+.form-content .validate {
 	position: relative;
 	width: 100%;
 	display: flex;
 	display: -webkit-flex;
 }
-.form-content .form-detail h2 {
+.form-content .validate h2 {
 	font-weight: 500;
 	font-size: 25px;
 	margin-bottom: 34px;
 	padding: 33px 50px 0px 60px;
 }
-.form-content .form-detail .form-left {
+.form-content .validate .form-left {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	width: 100%;
 
 }
-.form-content .form-detail .form-left h2 {
+.form-content .validate .form-left h2 {
 	color: rgb(0,40,40);
 }
-.form-content .form-detail .form-right {
+.form-content .validate .form-right {
 	width: 100%;
 	background: #000;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
-.form-content .form-detail .form-right h2 {
+.form-content .validate .form-right h2 {
 	color: white;
 }
-.form-content .form-detail .form-group {
+.form-content .validate .form-group {
 	display: flex;
 }
-.form-content .form-detail .form-row {
+.form-content .validate .form-row {
 	position: relative;
 	margin-bottom: 24px;
 	padding-left: 60px;
     padding-right: 50px;
 
 }
-.form-content .form-detail .form-left .form-group .form-row.form-row-1 {
+.form-content .validate .form-left .form-group .form-row.form-row-1 {
 	width: 50%;
 	padding: 0 12px 0 60px;
 }
-.form-content .form-detail .form-left .form-group .form-row.form-row-2 {
+.form-content .validate .form-left .form-group .form-row.form-row-2 {
 	width: 50%;
 	padding: 0 50px 0 12px;
 }
-.form-content .form-detail .form-right .form-group .form-row.form-row-1 {
+.form-content .validate .form-right .form-group .form-row.form-row-1 {
 	width: 50%;
 	padding: 0 12px 0 60px;
 }
-.form-content .form-detail .form-right .form-group .form-row.form-row-2 {
+.form-content .validate .form-right .form-group .form-row.form-row-2 {
 	width: 50%;
 	padding: 0 50px 0 12px;
 }
-.form-content .form-detail select,
-.form-content .form-detail input {
+.form-content .validate select,
+.form-content .validate input {
 	width: 100%;
     padding: 11.5px 15px 15px 15px;
     border: 1px solid transparent;
@@ -89,68 +89,68 @@ body {
     font-size: 16px;
 	box-sizing: border-box;
 }
-.form-content .form-detail select {
+.form-content .validate select {
 	background: 0 0;
 	position: relative;
 	z-index: 9;
 	cursor: pointer;
 }
-.form-content .form-detail .form-left select {
+.form-content .validate .form-left select {
 	color: #666;
 }
 
-.form-content .form-detail .form-right select {
+.form-content .validate .form-right select {
 	color: #666;
 }
-.form-content .form-detail .select-btn {
+.form-content .validate .select-btn {
 	z-index: 0;
     position: absolute;
     top: 30%;
     right: 11.5%;
     font-size: 18px;
 }
-.form-content .form-detail .form-left .select-btn {
+.form-content .validate .form-left .select-btn {
     color: #666;
 }
-.form-content .form-detail .form-right .select-btn {
+.form-content .validate .form-right .select-btn {
     color: #fff;
 }
-.form-content .form-detail .form-right .form-group .form-row.form-row-2 .select-btn {
+.form-content .validate .form-right .form-group .form-row.form-row-2 .select-btn {
 	top: 20%;
 	right: 19%;
 }
-.form-content .form-detail .form-left input {
+.form-content .validate .form-left input {
 	color: #000;
 }
-.form-content .form-detail .form-right input {
+.form-content .validate .form-right input {
 	color: #fff;
 }
-.form-content .form-detail .form-left input,
-.form-content .form-detail .form-left select {
+.form-content .validate .form-left input,
+.form-content .validate .form-left select {
 	border-bottom: 1px solid #ccc;
 }
-.form-content .form-detail .form-left input:focus,
-.form-content .form-detail .form-left select:focus {
+.form-content .validate .form-left input:focus,
+.form-content .validate .form-left select:focus {
 	border-bottom: 1px solid #999;
 }
-.form-content .form-detail .form-right input,
-.form-content .form-detail .form-right select {
+.form-content .validate .form-right input,
+.form-content .validate .form-right select {
 	border-bottom: 1px solid;
 	border-bottom-color: #666;
 }
-.form-content .form-detail .form-right input:focus,
-.form-content .form-detail .form-right select:focus {
+.form-content .validate .form-right input:focus,
+.form-content .validate .form-right select:focus {
 	border-bottom: 1px solid #ccc;
 }
-.form-content .form-detail .form-right select option {
+.form-content .validate .form-right select option {
 	background: #fff;
 }
-.form-content .form-detail .form-right .form-row-last {
+.form-content .validate .form-right .form-row-last {
     padding-left: 60px;
     margin: 44px 0 10px;
     text-align: center;
 }
-.form-content .form-detail .form-right .register {
+.form-content .validate .form-right .register {
 	background: #fff;
 	border-radius: 25px;
 	box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.15);
@@ -163,14 +163,22 @@ body {
 	font-size: 15px;
 
 }
-.form-content .form-detail .form-right .register:hover {
+.form-content .validate .form-right .register:hover {
 	background: #ccc;
 }
-.form-content .form-detail .form-right .form-row-last input {
+.form-content .validate .form-right .form-row-last input {
 	padding: 12.5px;
 }
 
+.error {
+  border-color: red;
+}
 
+.error-message {
+  color: red;
+  font-style: italic;
+  margin-bottom: 1em;
+}
 
 @media screen and (max-width: 1199px) {
 	.form-content {
@@ -178,54 +186,54 @@ body {
 	}
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
-	.form-content .form-detail .form-group {
+	.form-content .validate .form-group {
 		flex-direction:  column;
 	}
-	.form-content .form-detail .form-left .form-group .form-row.form-row-1,
-	.form-content .form-detail .form-left .form-group .form-row.form-row-2,
-	.form-content .form-detail .form-right .form-group .form-row.form-row-1,
-	.form-content .form-detail .form-right .form-group .form-row.form-row-2 {
+	.form-content .validate .form-left .form-group .form-row.form-row-1,
+	.form-content .validate .form-left .form-group .form-row.form-row-2,
+	.form-content .validate .form-right .form-group .form-row.form-row-1,
+	.form-content .validate .form-right .form-group .form-row.form-row-2 {
 	    width: auto;
 	    padding: 0 50px 0 60px;
 	}
-	.form-content .form-detail .select-btn,
-	.form-content .form-detail .form-right .form-group .form-row.form-row-2 .select-btn {
+	.form-content .validate .select-btn,
+	.form-content .validate .form-right .form-group .form-row.form-row-2 .select-btn {
 		right: 15%;
 	}
 
 }
 @media screen and (max-width: 767px) {
-	.form-content .form-detail {
+	.form-content .validate {
 		flex-direction:  column;
 	}
-	.form-content .form-detail .form-right {
+	.form-content .validate .form-right {
 		border-top-right-radius: 0px;
     	border-bottom-left-radius: 10px;
 	}
-	.form-content .form-detail .form-left {
+	.form-content .validate .form-left {
 		padding-bottom: 50px;
 	}
 }
 @media screen and (max-width: 575px) {
-	.form-content .form-detail .form-group {
+	.form-content .validate .form-group {
 		flex-direction:  column;
 	}
-	.form-content .form-detail .form-row,
-	.form-content .form-detail .form-left .form-group .form-row.form-row-1,
-	.form-content .form-detail .form-left .form-group .form-row.form-row-2,
-	.form-content .form-detail .form-right .form-group .form-row.form-row-1,
-	.form-content .form-detail .form-right .form-group .form-row.form-row-2 {
+	.form-content .validate .form-row,
+	.form-content .validate .form-left .form-group .form-row.form-row-1,
+	.form-content .validate .form-left .form-group .form-row.form-row-2,
+	.form-content .validate .form-right .form-group .form-row.form-row-1,
+	.form-content .validate .form-right .form-group .form-row.form-row-2 {
 	    width: auto;
 	    padding: 0 30px;
 	}
-	.form-content .form-detail .select-btn,
-	.form-content .form-detail .form-right .form-group .form-row.form-row-2 .select-btn {
+	.form-content .validate .select-btn,
+	.form-content .validate .form-right .form-group .form-row.form-row-2 .select-btn {
 		right: 15%;
 	}
-	.form-content .form-detail h2 {
+	.form-content .validate h2 {
 	    padding: 33px 30px 0px 30px;
 	}
-	.form-content .form-detail .form-right .form-row-last {
+	.form-content .validate .form-right .form-row-last {
 		padding-left: 0;
 		text-align: center;
 	    margin: 44px 0 30px;
