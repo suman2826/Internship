@@ -8,6 +8,22 @@ for(var i = 0;i< forms.length;i++){
 var hasError = function(field) {
   if (field.type === 'submit') return;
   var validity = field.validity;
+  if (validity.valueMissing) return 'Please fill out this field.';
+  if (validity.typeMismatch) {
+    if (field.type ==='email')
+      return "Please enter a valid email address.";
+  }
+  if (field.getAttribute('minLength')>1)
+  {
+    if (field.getAttribute('maxLength') < field.value.length) {
+      return 'Please shorten this text to no more than ' 
+      + field.getAttribute('maxLength') + ' characters.';
+    }
+    if (field.getAttribute('minLength') > field.value.length) {
+      return 'Please lengthen this text to more than ' 
+      + field.getAttribute('minLength') + ' characters.';
+    }
+  }
   if (document.getElementById('password1').value ==
     document.getElementById('password2').value) {
     document.getElementById('message').style.color = 'green';
@@ -16,24 +32,13 @@ var hasError = function(field) {
     document.getElementById('message').style.color = 'red';
     document.getElementById('message').innerHTML = 'Not matching';
   }
-  if(validity.valid) return;
-  if (validity.valueMissing) return 'Please fill out this field.';
-  if (validity.typeMismatch) {
-    if (field.type ==='email')
-      return "Please enter a valid email address.";
-  }
-  console.log(validity);
-  if (validity.tooShort) return 
-    'Please lengthen this text ';
-
-  if (validity.tooLong) return 'Please shorten this text to no more than ' 
-    + field.getAttribute('maxLength') + ' characters. You are currently using ' 
-    + field.value.length + ' characters.';
-
+  // if(validity.valid) return;
+  // if (validity.valueMissing) return 'Please fill out this field.';
+  
   if (validity.badInput) return 'Please enter a number.';
   if (validity.patternMismatch) return 'Please match the requested format.';
 
-  return 'The value you entered for this field is invalid.';
+  return '';
 };
 
 var showError = function(field,error) {
@@ -79,6 +84,17 @@ document.addEventListener('blur',function(event) {
     }
     removeError(event.target);
 
+
+},true);
+
+document.addEventListener('focusout',function(event) {
+  if(!event.target.form.classList.contains('validate'))
+    return;
+
+    var error = hasError(event.target);
+    if (error) {
+        showError(event.target, error);
+    }
 },true);
 
 document.addEventListener('submit',function(event) {
