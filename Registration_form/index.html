@@ -6,22 +6,28 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css"/>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+
 </head>
 <body class="page">
 	<div class="page-content">
 	<div class="form-content">
-		<form class="validate" action="#" method ="post">
+		<form class="validate" id="register" action="#" method ="post">
 			<div class="form-left">
 				<h2>General Information
 				</h2>
-				<div class="form-group">
-				<div class="form-row form-row-1">
-					<input type="text" id="text" name="first_name" id="first_name" class="input-text" minLength="3" maxLength="26" placeholder="First Name" required>
+				
+				<div class="form-row">
+					<input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name">
 				</div>
-				<div class="form-row form-row-2">
-					<input type="text" id="text2" name="last_name" id="last_name" class="input-text" minLength="2" maxLength="40" placeholder="Last Name" required>
+				<div class="form-row">
+					<input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name">
 				</div>
-			</div>
+			
 				<div class="form-row">
 						<select name="gender">
 						    <option value="position">Gender</option>
@@ -62,25 +68,24 @@
 						</span>
 					</div>
 					<div class="form-row">
-					<input type="password" id="password1" name="psw" minLength="8" maxLength="25"placeholder="Enter Password" required>
+					<input type="password" id="password1" name="password1" placeholder="Enter Password">
 				</div>
 				<div class="form-row">
-					<input type="password" id="password2" name="psw-repeat" minLength="8" maxLength="25"placeholder="Retype Password"
-					required>
+					<input type="password" id="password2" name="password2" placeholder="Retype Password">
 					<span id='message'></span>
 				</div>
 			</div>
 			<div class="form-right">
 					<h2>Contact Details</h2>
 					<div class="form-row">
-						<input type="text" id="text3" name="street" class="street" id="street" minLength="5" maxLength="80"placeholder="Street + Nr" required>
+						<input type="text" id="street" name="street" class="street" id="street" placeholder="Address line 1">
 					</div>
 					<div class="form-row">
-						<input type="text" id="text4" name="additional" class="additional" id="additional" minLength="5" maxLength="80"placeholder="Additional Information" required>
+						<input type="text" id="additional" name="additional" class="additional" placeholder="Address line 2">
 					</div>
 					<div class="form-row">
 						
-							<input type="number" id="number1" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
+							<input type="number" id="zip" name="zip" class="zip" placeholder="Zip Code">
 						
 					</div>
 					<div class="form-row">
@@ -97,23 +102,17 @@
 					</div>
 					<div class="form-group">
 						<div class="form-row form-row-1">
-							<input type="text" id="text5" name="code" class="code" id="code" placeholder="Code +" required>
+							<input type="text" name="code" class="code" id="code" placeholder="Code +">
 						</div>
 						<div class="form-row form-row-2">
-							<input type="number" id="text6" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
+							<input type="number" name="phone" class="phone" id="phone" placeholder="Phone Number">
 						</div>
 					</div>
 					<div class="form-row">
-						<input type="email" id="email" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" minLength="6" maxLength="25"placeholder="Your Email">
-					</div>
-					<div class="form-checkbox">
-						<label for="check"><p>I do accept the Terms and Conditions.</p>
-						  	<input type="checkbox" name="checkbox" id="check" value="1" checked>
-						  	<span class="checkmark"></span>
-						</label>
+						<input type="email" name="email" id="email" class="input-text" placeholder="Your Email">
 					</div>
 					<div class="form-row-last">
-						<input type="submit" id="submit" name="register" class="register" value="Register">
+						<input type="submit" id="submit" name="submit" class="register" value="Register">
 					</div>
 				</div>
 			</form>

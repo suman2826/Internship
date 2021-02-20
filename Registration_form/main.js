@@ -1,120 +1,69 @@
+$(function() {
+  $.validator.addMethod('strongPassword',function(value,element) {
+    return this.optional(element) || value.length >= 6 && /\d/.test(value);
+  }, "Your password must be 6 characters long and contain atleast one number");
+  $.validator.addMethod('numberVerify',function(value,element) {
+    return this.optional(element) || value.length == 12 && value.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+  }, "Please specify a valid phone number");
 
-var forms = document.querySelectorAll('.validate');
-for(var i = 0;i< forms.length;i++){
-  forms[i].setAttribute('novalidate',true);
-}
-
-//for validation
-var hasError = function(field) {
-  if (field.type === 'submit') return;
-  var validity = field.validity;
-  if (validity.valueMissing) return 'Please fill out this field.';
-  if (validity.typeMismatch) {
-    if (field.type ==='email')
-      return "Please enter a valid email address.";
-  }
-  if (field.getAttribute('minLength')>1)
-  {
-    if (field.getAttribute('maxLength') < field.value.length) {
-      return 'Please shorten this text to no more than ' 
-      + field.getAttribute('maxLength') + ' characters.';
-    }
-    if (field.getAttribute('minLength') > field.value.length) {
-      return 'Please lengthen this text to more than ' 
-      + field.getAttribute('minLength') + ' characters.';
-    }
-  }
-  if (document.getElementById('password1').value ==
-    document.getElementById('password2').value) {
-    document.getElementById('message').style.color = 'green';
-    document.getElementById('message').innerHTML = '';
-  } else {
-    document.getElementById('message').style.color = 'red';
-    document.getElementById('message').innerHTML = 'Not matching';
-  }
-  // if(validity.valid) return;
-  // if (validity.valueMissing) return 'Please fill out this field.';
-  
-  if (validity.badInput) return 'Please enter a number.';
-  if (validity.patternMismatch) return 'Please match the requested format.';
-
-  return '';
-};
-
-var showError = function(field,error) {
-  field.classList.add('error');
-  var id =field.id || field.name;
-  if(!id) return;
-  var message = field.form.querySelector('.error-message#error-for-' + id );
-    if (!message) {
-        message = document.createElement('div');
-        message.className = 'error-message';
-        message.id = 'error-for-' + id;
-        field.parentNode.insertBefore( message, field.nextSibling );
-    }
-    field.setAttribute('aria-describedby', 'error-for-' + id);
-
-    message.innerHTML = error;
-
-    message.style.display = 'block';
-    message.style.visibility = 'visible';
-
-};
-
-var removeError = function(field) {
-  field.classList.remove('error');
-  field.removeAttribute('aria-describedby');
-  var id = field.id || field.name;
-    if (!id) return;
-    var message = field.form.querySelector('.error-message#error-for-' + id + '');
-    if (!message) return;
-
-    message.innerHTML = '';
-    message.style.display = 'none';
-    message.style.visibility = 'hidden';
-};
-
-document.addEventListener('blur',function(event) {
-  if(!event.target.form.classList.contains('validate'))
-    return;
-
-    var error = hasError(event.target);
-    if (error) {
-        showError(event.target, error);
-    }
-    removeError(event.target);
-
-
-},true);
-
-document.addEventListener('focusout',function(event) {
-  if(!event.target.form.classList.contains('validate'))
-    return;
-
-    var error = hasError(event.target);
-    if (error) {
-        showError(event.target, error);
-    }
-},true);
-
-document.addEventListener('submit',function(event) {
-  if(!event.target.classList.contains('validate')) return;
-  var fields = event.target.elements;
-  var error,hasErrors;
-  for(var i=0;i<fields.length;i++) {
-    error = hasError(fields[i]);
-    if (error) {
-      showError(fields[i],error);
-      if(!hasErrors) {
-        hasErrors = fields[i];
+  $("#register").validate({
+    rules:{
+      first_name: {
+        required: true,
+        nowhitespace: true
+      },
+      last_name:"required",
+      password1: {
+        required: true,
+        strongPassword: true
+      },
+      password2: {
+        required: true,
+        equalTo: "#password1"
+      },
+      street: {
+        required: true,
+        minLength: 6,
+        maxLength: 50,
+      },
+      additional: {
+        required: true,
+        minLength: 6,
+        maxLength: 50,
+      },
+      zip:"required",
+      code: "required",
+      phone: {
+        required: true,
+        numberVerify: true
+      },
+      email: {
+        required: true,
+        email: true
       }
+    },
+    messages: {
+      password1: {
+        required: "Please give the password",
+        strongPassword: "Your password must be 6 characters long and contain atleast one number"
+      },
+      password2: {
+      required: "Please give the password",
+      equalTo: "Please enter the same password as above"
+      },
+      street: "Please enter your address",
+      additional: "Please enter your additional information",
+      phone: {
+      required: "Please enter your phone number",
+      numberVerify: "Please enter a valid number"
+      },
+      email:{
+      required: "Please enter your email",
+      email: "Please enter a valid email"
     }
-  }
-  if (hasErrors) {
-    event.preventDefault();
-    hasErrors.focus();
-  }
-},false);
+    }
+  });
+})
 
 const countriesList = document.getElementById("countries");
 const statesList = document.getElementById("states");
